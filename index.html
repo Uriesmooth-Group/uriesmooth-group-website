@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uriesmooth — Technology for a Global Market</title>
+  <meta name="description" content="UriesmoothTech builds real-time communication, connectivity, and AI platforms." />
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #121826;
+      --text: #e8edf7;
+      --muted: #9aa8c7;
+      --accent: #5b8cff;
+      --accent-2: #7c5cff;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a2340 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 3rem; }
+    .logo { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; font-size: 0.95rem; }
+    nav a:hover { color: var(--text); }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero p { color: var(--muted); font-size: 1.125rem; max-width: 36rem; margin-bottom: 1.75rem; }
+    .cta {
+      display: inline-flex; gap: 0.75rem; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block; padding: 0.7rem 1.2rem; border-radius: 10px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+    }
+    .btn-ghost {
+      background: transparent; color: var(--text); border-color: var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--muted); }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem; margin-top: 3.5rem;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.35rem 1.4rem;
+    }
+    .card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    footer {
+      margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem;
+      justify-content: space-between;
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Urie<span>smooth</span></div>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="https://github.com/uriesmooth">GitHub</a>
+        <a href="https://github.com/UriesmoothTech">Org</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Building technology for a global market</h1>
+      <p>
+        UriesmoothTech develops real-time communication engines, connectivity platforms,
+        and AI-powered tools. More content and documentation coming soon.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/uriesmooth">View projects</a>
+        <a class="btn btn-ghost" href="https://github.com/UriesmoothTech/website">Website repo</a>
+      </div>
+    </section>
+
+    <section class="grid" id="products">
+      <article class="card">
+        <h3>P2P / Real-time</h3>
+        <p>Serverless, zero-trust media engine using WebRTC and hardware acceleration.</p>
+      </article>
+      <article class="card">
+        <h3>Connect</h3>
+        <p>Global connectivity: eSIM data, virtual numbers, multi-currency wallets.</p>
+      </article>
+      <article class="card">
+        <h3>AI Video &amp; Voice</h3>
+        <p>Real-time voice, video avatar, and agent stacks built for low latency.</p>
+      </article>
+    </section>
+
+    <footer>
+      <span>© 2026 UriesmoothTech · Nigeria → Global</span>
+      <span>
+        <a href="https://uriesmooth.online">uriesmooth.online</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
+
+
