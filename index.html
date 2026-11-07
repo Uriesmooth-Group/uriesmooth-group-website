@@ -1,121 +1,369 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uriesmooth — Technology for a Global Market</title>
-  <meta name="description" content="UriesmoothTech builds real-time communication, connectivity, and AI platforms." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Uriesmooth Group is an independent technology company engineering trusted digital solutions across software, artificial intelligence, cloud and automation.">
+  <meta name="robots" content="index, follow">
+  <title>Uriesmooth Group | Technology That Moves You Forward</title>
   <style>
     :root {
-      --bg: #0b0f19;
-      --card: #121826;
-      --text: #e8edf7;
-      --muted: #9aa8c7;
-      --accent: #5b8cff;
-      --accent-2: #7c5cff;
-      --border: rgba(255,255,255,0.08);
+      color-scheme: dark;
+      --bg: #080d18;
+      --panel: #101a2b;
+      --panel2: #0c1422;
+      --text: #f4f7fc;
+      --muted: #a8b4c8;
+      --line: rgba(177, 198, 228, .15);
+      --accent: #70a7ff;
+      --accent2: #8ce2d0;
+      --max: 1160px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: radial-gradient(1200px 600px at 10% -10%, #1a2340 0%, var(--bg) 55%);
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(45, 101, 180, .20), transparent 38rem),
+        var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
     }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 3rem; }
-    .logo { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; }
-    .logo span { color: var(--accent); }
-    nav a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; font-size: 0.95rem; }
+    a { color: inherit; }
+    a:focus-visible {
+      outline: 3px solid var(--accent2);
+      outline-offset: 4px;
+    }
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 1rem;
+      background: white;
+      color: black;
+      padding: .7rem 1rem;
+      z-index: 10;
+    }
+    .skip:focus { left: 1rem; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 13, 24, .82);
+    }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+    .brand span { color: var(--accent); }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .92rem;
+    }
     nav a:hover { color: var(--text); }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
+    .hero { padding: 112px 0 96px; }
+    .eyebrow {
+      color: var(--accent2);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
-    .hero p { color: var(--muted); font-size: 1.125rem; max-width: 36rem; margin-bottom: 1.75rem; }
-    .cta {
-      display: inline-flex; gap: 0.75rem; flex-wrap: wrap;
+    h1 {
+      max-width: 850px;
+      margin: 20px 0;
+      font-size: clamp(2.7rem, 7vw, 5.6rem);
+      line-height: 1.04;
+      letter-spacing: -.065em;
     }
+    .hero p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
     .btn {
-      display: inline-block; padding: 0.7rem 1.2rem; border-radius: 10px;
-      text-decoration: none; font-weight: 600; font-size: 0.95rem;
-      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
     }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff;
+    .primary { background: var(--accent); color: #07101f; border-color: var(--accent); }
+    .secondary { background: rgba(255,255,255,.03); }
+    .btn:hover { transform: translateY(-1px); }
+    section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-head { max-width: 720px; margin-bottom: 32px; }
+    h2 {
+      margin: 8px 0 12px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -.045em;
     }
-    .btn-ghost {
-      background: transparent; color: var(--text); border-color: var(--border);
-    }
-    .btn-ghost:hover { border-color: var(--muted); }
+    .section-head p, .card p, .statement p { color: var(--muted); }
     .grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.25rem; margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
     }
     .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 1.35rem 1.4rem;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: linear-gradient(145deg, var(--panel), var(--panel2));
     }
-    .card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
-    .card p { color: var(--muted); font-size: 0.95rem; }
-    footer {
-      margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
-      color: var(--muted); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem;
+    .card h3 { margin: 0 0 10px; font-size: 1.12rem; }
+    .card p { margin: 0; font-size: .96rem; }
+    .number {
+      color: var(--accent2);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+    .statement {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(120deg, rgba(112,167,255,.12), rgba(140,226,208,.06));
+    }
+    .statement p { max-width: 850px; font-size: 1.12rem; }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
-    footer a { color: var(--muted); }
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    footer a { color: var(--text); text-decoration: none; }
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .focus-grid { grid-template-columns: 1fr; }
+      .hero { padding: 82px 0 72px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .nav { align-items: flex-start; flex-direction: column; padding: 18px 0; gap: 12px; }
+      nav { gap: 14px; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+      .statement { padding: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">Urie<span>smooth</span></div>
-      <nav>
-        <a href="#products">Products</a>
-        <a href="https://github.com/uriesmooth">GitHub</a>
-        <a href="https://github.com/UriesmoothTech">Org</a>
-      </nav>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <section class="hero">
-      <h1>Building technology for a global market</h1>
-      <p>
-        UriesmoothTech develops real-time communication engines, connectivity platforms,
-        and AI-powered tools. More content and documentation coming soon.
-      </p>
-      <div class="cta">
-        <a class="btn btn-primary" href="https://github.com/uriesmooth">View projects</a>
-        <a class="btn btn-ghost" href="https://github.com/UriesmoothTech/website">Website repo</a>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Uriesmooth Group home">Uriesmooth<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#focus">Engineering focus</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/Uriesmooth-Group" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">Independent technology company</div>
+        <h1>Technology that moves your world forward.</h1>
+        <p>
+          Uriesmooth Group engineers trusted digital solutions that help
+          organizations innovate, automate, and grow with confidence.
+          We bring practical engineering and a global outlook to the
+          technology challenges shaping tomorrow.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#services">Explore our capabilities</a>
+          <a class="btn secondary" href="https://github.com/Uriesmooth-Group"
+             target="_blank" rel="noopener noreferrer">Explore our GitHub</a>
+        </div>
       </div>
     </section>
 
-    <section class="grid" id="products">
-      <article class="card">
-        <h3>P2P / Real-time</h3>
-        <p>Serverless, zero-trust media engine using WebRTC and hardware acceleration.</p>
-      </article>
-      <article class="card">
-        <h3>Connect</h3>
-        <p>Global connectivity: eSIM data, virtual numbers, multi-currency wallets.</p>
-      </article>
-      <article class="card">
-        <h3>AI Video &amp; Voice</h3>
-        <p>Real-time voice, video avatar, and agent stacks built for low latency.</p>
-      </article>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Who we are</div>
+          <h2>Built on engineering. Driven by possibility.</h2>
+          <p>
+            Uriesmooth Ltd is an independent technology company focused on
+            building dependable digital products, platforms, and services.
+            Our approach combines engineering excellence, responsible
+            innovation, and solutions designed with long-term growth in mind.
+          </p>
+        </div>
+        <div class="statement">
+          <div class="eyebrow">Our mission</div>
+          <p>
+            Engineer trusted digital solutions that enable organizations
+            to innovate, automate, and grow with confidence.
+          </p>
+          <div class="eyebrow">Our vision</div>
+          <p>
+            To become a globally respected technology company recognized
+            for engineering excellence, responsible innovation, and
+            reliable software products.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <footer>
-      <span>© 2026 UriesmoothTech · Nigeria → Global</span>
-      <span>
-        <a href="https://uriesmooth.online">uriesmooth.online</a>
-      </span>
-    </footer>
-  </div>
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">What we do</div>
+          <h2>Technology capabilities for a changing world.</h2>
+          <p>
+            We develop and apply technology across connected disciplines,
+            from software foundations to intelligent automation.
+          </p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="number">01 / ENGINEERING</div>
+            <h3>Software Engineering</h3>
+            <p>
+              Digital products, application development, platform
+              architecture, and dependable software systems.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">02 / INTELLIGENCE</div>
+            <h3>Artificial Intelligence</h3>
+            <p>
+              AI-powered tools, intelligent workflows, and practical
+              applications of emerging technologies.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">03 / INFRASTRUCTURE</div>
+            <h3>Cloud &amp; Automation</h3>
+            <p>
+              Cloud-oriented infrastructure, operational automation,
+              integrations, and scalable digital foundations.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">04 / INNOVATION</div>
+            <h3>Digital Innovation</h3>
+            <p>
+              New digital experiences, connected services, and
+              technology-led solutions to real-world problems.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Engineering focus</div>
+          <h2>Exploring what connected technology can become.</h2>
+          <p>
+            These focus areas represent technology directions and
+            development initiatives across the Uriesmooth ecosystem.
+          </p>
+        </div>
+        <div class="focus-grid">
+          <article class="card">
+            <div class="number">01</div>
+            <h3>P2P &amp; Real-time Systems</h3>
+            <p>
+              Communication engines, real-time experiences, and
+              connectivity technologies.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">02</div>
+            <h3>Connectivity Platforms</h3>
+            <p>
+              Connected digital services and infrastructure designed
+              to support evolving user and business needs.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">03</div>
+            <h3>AI Voice &amp; Video</h3>
+            <p>
+              Intelligent voice, video, and agent experiences
+              supported by modern AI technologies.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact">
+        <div>
+          <div class="eyebrow">Connect with Uriesmooth</div>
+          <h2>Let's build what comes next.</h2>
+          <p class="section-head">
+            For business enquiries, collaboration, and general information,
+            contact our team.
+          </p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:info@uriesmooth.online">Contact us</a>
+          <a class="btn secondary" href="https://github.com/Uriesmooth-Group"
+             target="_blank" rel="noopener noreferrer">GitHub organization</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Uriesmooth Ltd. All rights reserved.</span>
+      <span>Global vision. Practical engineering. Built for growth.</span>
+      <a href="https://uriesmooth.online">uriesmooth.online</a>
+    </div>
+  </footer>
 </body>
 </html>
-
-
