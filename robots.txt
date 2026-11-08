@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uriesmooth.org/sitemap.xml
