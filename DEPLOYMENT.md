@@ -36,10 +36,11 @@ Start with the GitHub Pages records as **DNS only** while validating the custom 
 
 After `uriesmooth.online` is Active and its DNS records are inventoried, create a Cloudflare Redirect Rule for website traffic:
 
-- Match: hostname equals `uriesmooth.online` OR `www.uriesmooth.online`
-- Destination: `https://uriesmooth.org/$1` (use a wildcard URL capture so the original path is retained)
-- Status: 301 permanent
-- Preserve query string: enabled
+- Create two wildcard redirect rules (one per hostname): `http*://uriesmooth.online/*` and `http*://www.uriesmooth.online/*`.
+- Target URL for each: `https://uriesmooth.org/${2}`.
+- Status: 301 permanent.
+- Preserve query string: enabled.
+- Cloudflare Single Redirects require the source hostnames to be proxied through Cloudflare; verify the rule with a path and query-string test before making it the canonical public route.
 
 Do not redirect MX, mail, DKIM, SPF, DMARC, verification records, or unrelated service subdomains. API and WebSocket subdomains need individually planned migration and method-preserving routing; do not apply a blanket apex redirect to them.
 
